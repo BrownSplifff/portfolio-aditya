@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import HeroCard from "../../components/HeroCard";
@@ -24,62 +23,28 @@ export default function HeroSection() {
   return (
     <div
       ref={headingRef}
-      className="
-      
-      relative
-      z-10
-      flex
-      flex-col
-      items-center
-      justify-center
-      px-6
-    "
+      className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6"
     >
-      <h1
-        className="
-        m-5
-        font-bold
-        text-xl
-        tracking-[0.6em]
-        text-cyan-300
-        font-medium
-      "
-      >
+      <h1 className="m-5 text-sm sm:text-base font-bold tracking-[0.5em] sm:tracking-[0.6em] text-cyan-300">
         PORTFOLIO
       </h1>
 
-      <div
-        className="
-        flex
-        flex-wrap
-        justify-center
-        gap-6
-      "
-      >
+      <div className="w-full flex flex-wrap justify-center gap-6">
         <HeroCard />
       </div>
-      <div>
-        <ExpNumCard />
-      </div>
-      <div
-        className="
-        flex
-        
-        justify-center
-        gap-6
-      "
-      >
+
+      <ExpNumCard />
+
+      <div className="w-full flex justify-center">
         <TechStackBand />
       </div>
-      <div>
+
+      <div className="w-full max-w-3xl">
         <CurrentlyLearningCard />
       </div>
-      <div>
-        <ExperienceSection />
-      </div>
-      <div>
-        <ProjectsSection />
-      </div>
+
+      <ExperienceSection />
+      <ProjectsSection />
     </div>
   );
 }
