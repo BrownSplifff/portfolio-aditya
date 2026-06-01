@@ -41,6 +41,7 @@ function ProjectsSection() {
       title: "Event Management Platform",
       desc: "Multi-role event platform with realtime notifications, protected routes, and dynamic event workflows.",
       stack: ["Socket.io", "JWT", "React", "REST APIs"],
+      link: "",
     },
     {
       title: "Hotel Booking Web App",
@@ -50,7 +51,7 @@ function ProjectsSection() {
   ];
 
   return (
-    <section className="relative z-10 mx-auto mt-24 sm:mt-32 w-full max-w-5xl px-0">
+    <section className="relative z-10 mx-auto mt-20 sm:mt-20 w-full max-w-5xl px-0">
       <div className="mb-10 sm:mb-14 text-center">
         <p className="mb-3 text-[10px] sm:text-xs tracking-[0.5em] sm:tracking-[0.6em] text-cyan-300">
           ACTIVE DEPLOYMENTS
@@ -60,14 +61,15 @@ function ProjectsSection() {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
         {projects.map((project, index) => (
           <div
             ref={(el) => (cardsRef.current[index] = el)}
             key={project.title}
             className={`
+              w-120
               relative overflow-hidden rounded-3xl border p-5 sm:p-6
-              backdrop-blur-xl transition-all duration-500 hover:scale-[1.02]
+              backdrop-blur-xl transition-all duration-500 hover:scale-[1.2]
               ${
                 index % 2 === 0
                   ? "border-cyan-400/20 bg-cyan-400/[0.04] hover:border-cyan-400/40 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]"
@@ -94,7 +96,7 @@ function ProjectsSection() {
                   Deployment {index + 1}
                 </p>
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+              <h2 className="text-l sm:text-xl md:text-2xl font-bold text-white">
                 {project.title}
               </h2>
             </div>
@@ -127,7 +129,7 @@ function ProjectsSection() {
             <p className="mb-2 sm:mb-3 text-[10px] sm:text-xs tracking-[0.5em] text-cyan-300">
               NEXT PHASE
             </p>
-            <h2 className="mb-4 sm:mb-5 text-2xl sm:text-3xl md:text-4xl font-black text-white">
+            <h2 className="mb-4 sm:mb-5 text-xl sm:text-xl md:text-2xl font-black text-white">
               Building Beyond Frontend
             </h2>
             <p className="max-w-4xl text-sm leading-8 sm:leading-9 text-zinc-300">

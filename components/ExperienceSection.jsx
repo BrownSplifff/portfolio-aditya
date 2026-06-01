@@ -1,7 +1,7 @@
 function ExperienceSection() {
   const experiences = [
     {
-      year: "2026 — PRESENT",
+      year: "2026 March — PRESENT",
       company: "Kindlebit Solutions",
       role: "Frontend Developer",
       work: [
@@ -50,7 +50,7 @@ function ExperienceSection() {
 
               <div className="flex w-fit items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] text-cyan-200 backdrop-blur-md">
                 <div className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_10px_#67e8f9]" />
-                Active
+                Present
               </div>
             </div>
 
