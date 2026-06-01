@@ -195,16 +195,27 @@ function initScene(THREE, canvas, PCOUNT, speedMult) {
 
   // --- Materials ---
   const suitMat = new THREE.MeshStandardMaterial({
-    color: 0xff2244,
-    emissive: 0x550011,
+    color: 0x00ffe7,
+    emissive: 0x001a18,
+    emissiveIntensity: 1.5,
     metalness: 0.15,
     roughness: 0.55,
   });
+
   const suitDarkMat = new THREE.MeshStandardMaterial({
-    color: 0xcc1133,
-    emissive: 0x330008,
+    color: 0x00c4b4,
+    emissive: 0x001010,
+    emissiveIntensity: 1.2,
     metalness: 0.1,
     roughness: 0.65,
+  });
+
+  const footMat = new THREE.MeshStandardMaterial({
+    color: 0x009688,
+    emissive: 0x000808,
+    emissiveIntensity: 1,
+    metalness: 0.2,
+    roughness: 0.6,
   });
   const visorMat = new THREE.MeshStandardMaterial({
     color: 0x88eeff,
@@ -300,12 +311,7 @@ function initScene(THREE, canvas, PCOUNT, speedMult) {
   AU.add(legR);
 
   // Feet (slightly wider at bottom)
-  const footMat = new THREE.MeshStandardMaterial({
-    color: 0x881122,
-    emissive: 0x220006,
-    metalness: 0.2,
-    roughness: 0.6,
-  });
+
   const footL = new THREE.Mesh(new THREE.SphereGeometry(0.32, 16, 12), footMat);
   footL.scale.set(1.1, 0.55, 1.3);
   footL.position.set(0.45, -2.22, 0.1);
