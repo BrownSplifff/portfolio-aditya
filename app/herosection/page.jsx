@@ -12,6 +12,27 @@ export default function HeroSection() {
   const headingRef = useRef(null);
 
   useEffect(() => {
+    const sendMessage = async () => {
+      const message = "hi";
+      const res = await fetch("/api/bot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: message,
+        }),
+      });
+
+      const data = await res.json();
+
+      console.log(data.reply);
+    };
+
+    sendMessage();
+  }, []);
+
+  useEffect(() => {
     gsap.from(headingRef.current, {
       y: 100,
       opacity: 0,
@@ -21,30 +42,33 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div
-      ref={headingRef}
-      className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6"
-    >
-      <h1 className="m-5 text-sm sm:text-base font-bold tracking-[0.5em] sm:tracking-[0.6em] text-cyan-300">
-        PORTFOLIO
-      </h1>
+    <div className="">
+      <div
+        ref={headingRef}
+        className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6"
+      >
+        <h1 className="m-5 text-sm sm:text-base font-bold tracking-[0.5em] sm:tracking-[0.6em] text-cyan-300">
+          PORTFOLIO
+        </h1>
 
-      <div className="w-full flex flex-wrap justify-center gap-6">
-        <HeroCard />
+        <div className="w-full flex flex-wrap justify-center gap-6">
+          <HeroCard />
+        </div>
+
+        <ExpNumCard />
+
+        <div className="w-full flex justify-center">
+          <TechStackBand />
+        </div>
+
+        <div className="w-full max-w-3xl">
+          <CurrentlyLearningCard />
+        </div>
+
+        <ExperienceSection />
+        <ProjectsSection />
       </div>
-
-      <ExpNumCard />
-
-      <div className="w-full flex justify-center">
-        <TechStackBand />
-      </div>
-
-      <div className="w-full max-w-3xl">
-        <CurrentlyLearningCard />
-      </div>
-
-      <ExperienceSection />
-      <ProjectsSection />
+      <div className="sticky ml-auto mr-5 w-fit bottom-5 ">hi</div>
     </div>
   );
 }
